@@ -1,0 +1,8 @@
+*.debug
+*.release
+*.test
+*.o
+*.profraw
+*.profdata
+*.coverage.html
+*.coverage.txt

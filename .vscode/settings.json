@@ -1,0 +1,20 @@
+{
+    "files.associations": {
+        "*.tcc": "c",
+        "func.h": "c",
+        "limits": "c",
+        "string.h": "c",
+        "in.h": "c",
+        "types.h": "c",
+        "client.h": "c",
+        "stdlib.h": "c",
+        "server.h": "c",
+        "unistd.h": "c",
+        "type_traits": "c",
+        "wait.h": "c"
+    },
+    "cSpell.words": [
+        "connfd",
+        "listfd"
+    ]
+}
