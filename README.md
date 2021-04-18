@@ -58,7 +58,14 @@ if (process_id > 0)
 // will hold a zero
 else if (process_id == 0)
 {
-    // do something as a child process
+    // do something as a child process here...
+    // keep in mind that the execution of the child process
+    // needs to be managed from begin/fork to end/exit 
+    // so to terminate the child process call the _exit function
+    // otherwise the execution will continue without stopping
+    // unless it crashes or reaching the end of the main function
+    // and probably causing unwanted side-effects
+    _exit(0);
 }
 
 // When the parent process was unable to fork
