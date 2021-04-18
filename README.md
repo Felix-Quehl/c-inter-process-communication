@@ -1,5 +1,7 @@
 # Example Project for IPC with a Child Process in C
 
+*There are other/new solutions to implement inter process communication. Maybe these solutions are more suitable for your problem. So before settling on a technology please checkout the linux manual sections about [shared memory](https://man7.org/linux/man-pages/man7/shm_overview.7.html), [pipes](https://man7.org/linux/man-pages/man2/pipe.2.html) and [sockets](https://man7.org/linux/man-pages/man2/socket.2.html).*
+
 This example contains a single `main.c` file show-casing cloning the execution into a child process via the `fork` function along with shared memory access though the `shmget`, `shmat`, `shmdt` and `shmctl` function.
 
 [Click here to view the source code of the main.c](src/main.c)
@@ -97,8 +99,6 @@ These are the corresponding functions:
 * [shmat](https://man7.org/linux/man-pages/man2/shmat.2.html)
 * [shmdt](https://man7.org/linux/man-pages/man2/shmdt.2.html)
 * [shmctl](https://man7.org/linux/man-pages/man2/shmctl.2.html)
-
-*There are other/new solutions to implement inter process communication. Maybe these solutions are more suitable for your problem. So before settling on a technology please checkout the linux manual sections about [shared memory](https://man7.org/linux/man-pages/man7/shm_overview.7.html), [pipes](https://man7.org/linux/man-pages/man2/pipe.2.html) and [sockets](https://man7.org/linux/man-pages/man2/socket.2.html).*
 
 ```c
 // this variable will hold the id of the shared memory objects
