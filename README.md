@@ -1,6 +1,32 @@
 # Example Project for IPC with a Child Process in C
 
-## How to fork/clone the main/parent process into a concurrently executed child process
+This example contains a single `main.c` file show-casing cloning the execution into a child process via the `fork` function along with shared memory access though the `shmget`, `shmat`, `shmdt` and `shmctl` function.
+
+[Click here to view the source code of the main.c](src/main.c)
+
+Links to the linux function documentation:
+
+* [shmget](https://man7.org/linux/man-pages/man2/shmget.2.html)
+* [shmat](https://man7.org/linux/man-pages/man2/shmat.2.html)
+* [shmdt](https://man7.org/linux/man-pages/man2/shmdt.2.html)
+* [shmctl](https://man7.org/linux/man-pages/man2/shmctl.2.html)
+
+## Build and Run
+
+This repo is ready to compile and features a full example.
+
+```bash
+# install packages
+sudo apt install make gcc
+# use make to build a target
+make clean debug
+# run the program
+./app.debug
+```
+
+## How to
+
+### How to fork/clone the main/parent process into a concurrently executed child process
 
 ```c
 // variable to hold the return value of the fork
@@ -49,7 +75,7 @@ else
 }
 ```
 
-## Inter process communication with a child process
+### Inter process communication with a child process
 
 Every process, parent and child, does have its own memory/address-space.  
 No matter whether the are stack or heap variables.  
