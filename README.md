@@ -1,8 +1,8 @@
 # Example Project for IPC with a Child Process in C
 
-*There are other/new solutions to implement inter process communication. Maybe these solutions are more suitable for your problem. So before settling on a technology please checkout the linux manual sections about [shared memory](https://man7.org/linux/man-pages/man7/shm_overview.7.html), [pipes](https://man7.org/linux/man-pages/man2/pipe.2.html) and [sockets](https://man7.org/linux/man-pages/man2/socket.2.html).*
+*There are other/new solutions to implement inter-process communication. Maybe these solutions are more suitable for your problem. So before settling on technology please check out the linux manual sections about [shared memory](https://man7.org/linux/man-pages/man7/shm_overview.7.html), [pipes](https://man7.org/linux/man-pages/man2/pipe.2.html) and [sockets](https://man7.org/linux/man-pages/man2/socket.2.html).*
 
-This example contains a single `main.c` file show-casing cloning the execution into a child process via the `fork` function along with shared memory access though the `shmget`, `shmat`, `shmdt` and `shmctl` function.
+This example contains a single `main.c` file show-casing cloning the execution into a child process via the `fork` function along with shared memory access through the `shmget`, `shmat`, `shmdt` and `shmctl` functions.
 
 [Click here to view the source code of the main.c](src/main.c)
 
@@ -65,7 +65,7 @@ else if (process_id == 0)
     // needs to be managed from begin/fork to end/exit 
     // so to terminate the child process call the _exit function
     // otherwise the execution will continue without stopping
-    // unless it crashes or reaching the end of the main function
+    // unless it crashes or reaches the end of the main function
     // and probably causing unwanted side-effects
     _exit(0);
 }
@@ -84,15 +84,15 @@ else
 }
 ```
 
-### Inter process communication with a child process
+### Interprocess communication with a child process
 
 Every process, parent and child, does have its own memory/address-space.  
-No matter whether the are stack or heap variables.  
-Not even pointer that are targeting the same memory address  
+No matter whether they are stack or heap variables.  
+Not even pointers that are targeting the same memory address  
 are actually accessing the same psychical memory location.
-There are multiple solutions to implement inter process communication.
+There are multiple solutions to implement inter-process communication.
 
-In this example we are going to use a System V shared memory segment.
+In this example, we are going to use a System V shared memory segment.
 These are the corresponding functions:
 
 * [shmget](https://man7.org/linux/man-pages/man2/shmget.2.html)
@@ -105,7 +105,7 @@ These are the corresponding functions:
 int shared_memory_id;
 // to access the memory we are going to need a pointer, this is it
 // we want to share only a single integer value
-// in a real implementation you a probably want a struct
+// in a real implementation you probably want a struct
 int *pointer;
 
 // we need to initialize the shared memory with the shmget function
